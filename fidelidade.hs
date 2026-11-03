@@ -1,43 +1,24 @@
--- =====================================================
--- PIF - Aula 12 | Atividade: Programa de Pontos PontoCerto
--- Desafios 1 a 4. Leia o README.md antes de comecar.
--- As respostas escritas vao no arquivo RESPOSTAS.md.
--- =====================================================
+module Fidelidade where
 
--- ---------- Desafio 1: regras guardadas em variaveis ----------
+-- D1: A Função de Alta Ordem
+aplicaCampanha :: (Int -> Int) -> Int -> Int
+aplicaCampanha regra valor = regra valor
 
+dobro :: Int -> Int
+dobro x = x * 2
 
--- ---------- Desafio 2: uma funcao que recebe a regra ----------
+-- D2: Campanha Relâmpago com Lambda
+resultadoMadrugada :: Int
+resultadoMadrugada = aplicaCampanha (\x -> x + 50) 100
 
+-- D3: A Fábrica de Regras
+criaMultiplicador :: Int -> (Int -> Int)
+criaMultiplicador fator = \x -> x * fator
 
--- ---------- Desafio 3: fabrica de campanhas ----------
+triplo :: Int -> Int
+triplo = criaMultiplicador 3
 
-
--- ---------- Desafio 4: campanhas acumuladas ----------
-
-
--- ---------- Testes (descomente conforme avancar) ----------
--- Ao descomentar, apague "-- " (os dois tracos E o espaco).
--- Cada print deve ficar alinhado exatamente embaixo do putStrLn.
-main :: IO ()
-main = do
-  putStrLn "--- Desafio 1 ---"
-  -- print (semCampanha 120)
-  -- print (pontosEmDobro 120)
-  -- print (bonus50 120)
-  -- print (campanhaDaSemana 120)
-  putStrLn "--- Desafio 2 ---"
-  -- print (calculaPontos semCampanha 80)
-  -- print (calculaPontos pontosEmDobro 80)
-  -- print (calculaPontos bonus50 80)
-  -- Promocao Relampago (escrevam a chamada com lambda aqui):
-  -- Quarta Verde (escrevam a chamada com lambda aqui):
-  putStrLn "--- Desafio 3 ---"
-  -- print (calculaPontos blackFriday 150)
-  -- print (calculaPontos aniversarioCliente 150)
-  -- print (calculaPontos (campanhaMultiplicadora 4) 25)
-  -- print (calculaPontos (campanhaBonus 30) 25)
-  putStrLn "--- Desafio 4 ---"
-  -- print (acumula blackFriday aniversarioCliente 150)
-  -- print (acumula aniversarioCliente blackFriday 150)
-  -- Semana do Cliente (escrevam a chamada aqui):
+-- D4: Processamento em Lote
+aplicaEmMassa :: (Int -> Int) -> [Int] -> [Int]
+aplicaEmMassa regra lista = map regra lista
+ 
