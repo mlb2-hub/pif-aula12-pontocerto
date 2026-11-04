@@ -4,8 +4,8 @@
 
 | Papel | Nome completo | Usuário do GitHub |
 |---|---|---|
-| Integrante 1 (dono do fork) | Sofia Martins van Drunen | |
-| Integrante 2 (colaborador) | Mateus de Lira Braga | |
+| Integrante 1 (dono do fork) | Sofia Martins van Drunen | smdv1601|
+| Integrante 2 (colaborador) | Mateus de Lira Braga | mlb2-hub|
 
 ## Explicação da solução
 Receber funções como parâmetro nas funções de alta ordem (como `aplicaCampanha`) e usar fábricas de funções elimina a necessidade de reescrever a mesma lógica de cálculo ou iteradores sempre que uma nova regra de bônus for criada.
