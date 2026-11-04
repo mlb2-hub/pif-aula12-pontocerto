@@ -1,18 +1,21 @@
-/* =====================================================
- * PIF - Aula 12 | Desafio 6: o modulo legado em C
- * Compilar e rodar:  cc pontocerto.c -o pontocerto && ./pontocerto
- * Sem compilador C: https://www.onlinegdb.com (escolha a linguagem C)
- * ===================================================== */
 #include <stdio.h>
 
-/* Escreva aqui: pontosEmDobro, bonus50, calculaPontos e acumula. */
+// D6: O Passado no C
+// 1. Crie a função de bônus que soma 10
+int bonus_dez(int valor) {
+    return valor + 10;
+}
 
+// 2. Crie a função aplica_regra_c que recebe um ponteiro de função e um valor
+void aplica_regra_c(int (*regra)(int), int valor) {
+    int resultado = regra(valor);
+    printf("Resultado: %d\n", resultado);
+}
 
-int main(void) {
-    /* Descomente cada linha conforme implementar. */
-    /* printf("%d\n", calculaPontos(pontosEmDobro, 80)); */
-    /* printf("%d\n", calculaPontos(bonus50, 80)); */
-    /* printf("%d\n", acumula(pontosEmDobro, bonus50, 100)); */
-    /* printf("%d\n", acumula(bonus50, pontosEmDobro, 100)); */
+int main() {
+    printf("Sistema PontoCerto em C\n");
+    // 3. Chame a função aplica_regra_c passando bonus_dez e o valor 100
+    aplica_regra_c(bonus_dez, 100);
+    
     return 0;
 }
